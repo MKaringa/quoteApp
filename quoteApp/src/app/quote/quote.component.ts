@@ -16,7 +16,14 @@ export class QuoteComponent implements OnInit {
     new Quote(5, "Your time is limited, so do not waste it living someone else's life. Do not be trapped by dogma – which is living with the results of other people's thinking.", 'Steve Jobs', "Mungai",new Date(2020,6,20),0,0),
   ];
 
- 
+  addNewQuote(qoute){
+    let quoteLength = this.quotes.length
+    quote.id =quoteLength+1;
+    quote.postingDate = new Date()
+
+
+    
+  }
 
 
   constructor() { }
