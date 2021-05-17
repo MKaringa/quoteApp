@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <div class="main">
         <div class="heading">
@@ -6,10 +7,16 @@
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <div></div>
+                <div *ngFor='let quote of quotes; let i=index'>
+                    <div class="quote" >
+                        <h4 id={{i}} appHighlight>{{quote.name}}</h4> 
+                        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+                        <button (click)='toggleDetails(i)' class="btn btn-primary">Details</button>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
-                
+
             </div>
         </div>
     </div>
